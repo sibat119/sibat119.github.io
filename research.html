@@ -1,122 +1,465 @@
-<!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Blog</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — Md. Mahadi Hasan Sibat</title>
+  <meta name="description" content="Research vision and current projects of Md. Mahadi Hasan Sibat — LLM evaluation, benchmark contamination, IT automation, conversational data science." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff;
+      --bg: #f5f5f5;
+      --text: #222222;
+      --text-muted: #555555;
+      --text-light: #888888;
+      --link: #2a7ae2;
+      --link-hover: #1a5fc0;
+      --border: #e0e0e0;
+      --accent: #2a7ae2;
+      --sidebar-width: 280px;
+      --nav-height: 44px;
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="index.html#top">Welcome</a></li>
-					<li><a href="research.html">Research</a></li>
-					<li><a href="index.html#portfolio">Portfolio</a></li>
-					<li><a href="index.html#papers">Publications</a></li>
-					<li><a href="index.html#teaching">Teaching & Awards</a></li>
-					<li><a href="index.html#academics">Academic Training</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="index.html#contact">Contact</a></li>
-				</ul>
-			</nav>
+      /* Project accent colors */
+      --proj1: #1565c0;   /* IT Automation — blue */
+      --proj1-bg: #e8f0fd;
+      --proj2: #6a1b9a;   /* Contamination — purple */
+      --proj2-bg: #f5eefa;
+      --proj3: #1b5e20;   /* Conv. DS — green */
+      --proj3-bg: #eaf4eb;
+    }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Inter','Helvetica Neue',Arial,sans-serif; font-size:14px; color:var(--text); background:var(--bg); line-height:1.6; }
+    a { color:var(--link); text-decoration:none; }
+    a:hover { color:var(--link-hover); text-decoration:underline; }
+    p { text-wrap:pretty; }
+    :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
 
-			<!-- Home -->
-			<article id="work" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h1>Current Research Projects</h1>
-						
-					</header>
-					<div class="row aln-center">
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured fa-comments"></span>
-								<h3><a href="vids.html" target="_blank">VIDS: Virtual Interactive Data Scientist</a></h3>
-								<p>What if an AI agent can serve you as your personal data scientist? Isn’t that cool?</p>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon solid featured fa-brain"></span>
-								<h3><a target="_blank" href="spiking.html">Spiking Neural Networks</a></h3>
-								<p>Can we build language models for spiking domain?</p>
-							</section>
-						</div>
-						
-					</div>
-					
-				</div>
-			</article>
+    /* ── Top Nav ── */
+    .masthead { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; }
+    .masthead-inner { max-width:1100px; margin-inline:auto; padding:0 var(--sidebar-width) 0 0; display:flex; align-items:center; justify-content:flex-end; }
+    .masthead-nav { display:flex; list-style:none; }
+    .masthead-nav a { display:block; padding:12px 14px; font-size:13px; font-weight:500; color:var(--text-muted); text-decoration:none; border-bottom:2px solid transparent; transition:color .15s,border-color .15s; }
+    .masthead-nav a:hover { color:var(--text); border-bottom-color:var(--accent); text-decoration:none; }
+    .masthead-nav a.active { color:var(--accent); border-bottom-color:var(--accent); }
+    .nav-toggle { display:none; align-items:center; justify-content:center; width:40px; height:44px; cursor:pointer; background:none; border:none; color:var(--text-muted); }
 
-		<!-- Papers -->
-		<article id="papers" class="wrapper style3">
-			<div class="container" style="text-align: left !important">
-				<header>
-					<h1>Published Works.</h1>
-				</header>
-				<ol>
-					
-					<li>
-						Shubhra Kanti Karmaker (“Santu”), <b>Mahadi Hassan</b>, Micah J. Smith, Lei Xu, Chengxiang Zhai, Kalyan Veeramachaneni 
-						<b>"AutoML to Date and Beyond: Challenges and Opportunities"</b> in ACM Computing Surveys 2022.
-						<a target="_blank" href="https://dl.acm.org/doi/abs/10.1145/3470918">Paper</a>
-					</li>
-					
-					
-					<li>
-						Yuan-Cheng Lai, Ahsan Ali, <b>Md. Mahadi Hassan</b>, Md. Shohrab Hossain, Ying-Dar Lin.
-						<b>"Performance modeling and analysis of TCP connections over software defined networks"</b> in GLOBECOM 2017 - 2017 IEEE Global Communications Conference.
-						<a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/8254078/">Paper</a>
-					</li>
-					
-					
-				</ol>
-			</div>
-		</article>
+    /* ── Layout ── */
+    .page-wrapper { max-width:1100px; margin-inline:auto; display:grid; grid-template-columns:var(--sidebar-width) 1fr; min-height:calc(100vh - var(--nav-height)); align-items:start; }
 
-		
+    /* ── Sidebar ── */
+    .sidebar { background:var(--white); border-right:1px solid var(--border); padding:32px 20px 40px; position:sticky; top:var(--nav-height); max-height:calc(100vh - var(--nav-height)); overflow-y:auto; }
+    .author-avatar { width:120px; height:120px; border-radius:50%; overflow:hidden; margin:0 auto 16px; background:#dce8f5; display:flex; align-items:center; justify-content:center; font-size:2.5rem; font-weight:300; color:var(--accent); letter-spacing:-1px; }
+    .author-avatar img { width:100%; height:100%; object-fit:cover; }
+    .author-name { font-size:16px; font-weight:600; color:var(--text); text-align:center; line-height:1.3; margin-bottom:6px; }
+    .author-bio-short { font-size:12.5px; color:var(--text-muted); text-align:center; line-height:1.5; margin-bottom:6px; }
+    .author-affil { font-size:12px; color:var(--text-light); text-align:center; line-height:1.6; margin-bottom:16px; }
+    .sidebar-divider { border:none; border-top:1px solid var(--border); margin:14px 0; }
+    .sidebar-links { list-style:none; display:flex; flex-direction:column; gap:4px; }
+    .sidebar-links li { display:flex; align-items:center; gap:8px; font-size:13px; }
+    .sidebar-links li svg { width:16px; height:16px; flex-shrink:0; color:var(--text-light); }
+    .sidebar-links a { color:var(--text-muted); text-decoration:none; font-size:13px; }
+    .sidebar-links a:hover { color:var(--link); text-decoration:underline; }
+    .sidebar-links .plain-text { color:var(--text-muted); }
+    .sidebar-section-label { font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--text-light); margin-bottom:10px; margin-top:18px; }
 
-		<!-- Contact -->
-		<article id="contact" class="wrapper style4">
-			<div class="container medium">
-				<header>
-					<h1>Contact Me! </h1>
-				</header>
-				<div class="row">
-					<div class="col-12">
-						<h4>
-							If you have any questions or comments, please feel free to contact me at mzh0167 (at) auburn (dot) edu or at sibathasan (at) gmail (dot) com.
-						</h4>
-						
-						<hr />
-						<h3>Find me on ...</h3>
-						<ul class="social">
-							<li><a target="_blank" href="https://twitter.com/sibat_hasan" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a target="_blank" href="https://www.facebook.com/mahadihasan.sibat/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a target="_blank" href="https://www.linkedin.com/in/mahadi-sibat-1105119/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							<li><a target="_blank" href="https://github.com/sibat119" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							
-						</ul>
-						
-					</div>
-				</div>
-			</div>
-		</article>
+    /* ── Research nav (quick-jump) ── */
+    .research-nav { list-style:none; display:flex; flex-direction:column; gap:2px; margin-top:4px; }
+    .research-nav a { font-size:12.5px; color:var(--text-muted); padding:4px 8px; border-radius:4px; display:block; transition:background .12s,color .12s; }
+    .research-nav a:hover { background:#f0f4ff; color:var(--link); text-decoration:none; }
+    .research-nav a.rn-active { background:#e8f0fd; color:var(--proj1); font-weight:600; }
+    .rn-dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:middle; position:relative; top:-1px; }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    /* ── Main ── */
+    .main-content { background:var(--white); padding:36px 40px 60px; }
+    .page-section { margin-bottom:40px; }
+    .section-title { font-size:18px; font-weight:600; color:var(--text); margin-bottom:12px; padding-bottom:6px; border-bottom:1px solid var(--border); }
+    .section-body { font-size:14px; color:var(--text); line-height:1.7; }
+    .section-body p { margin-bottom:12px; max-width:72ch; }
+    .section-body p:last-child { margin-bottom:0; }
 
-	</body>
+    /* ── Vision pillars ── */
+    .vision-pillars { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 6px; }
+    .pillar {
+      display:inline-flex; align-items:center; gap:7px;
+      font-size:12.5px; font-weight:600;
+      padding:5px 12px; border-radius:20px;
+      border:1px solid;
+    }
+    .pillar-lme  { background:#e8f0fd; color:#1565c0; border-color:#b3caf5; }
+    .pillar-se   { background:#fce4ec; color:#880e4f; border-color:#f48fb1; }
+    .pillar-dc   { background:#f5eefa; color:#6a1b9a; border-color:#ce93d8; }
+    .pillar-rw   { background:#e8f5e9; color:#1b5e20; border-color:#a5d6a7; }
+    .pillar .dot { width:7px; height:7px; border-radius:50%; background:currentColor; }
+
+    /* ── Project cards ── */
+    .projects-list { display:flex; flex-direction:column; gap:24px; }
+    .project-card {
+      border:1px solid var(--border);
+      border-radius:6px;
+      overflow:hidden;
+    }
+    .project-header {
+      display:flex; align-items:flex-start; gap:14px;
+      padding:16px 20px 14px;
+      border-bottom:1px solid var(--border);
+    }
+    .project-num {
+      width:28px; height:28px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:12px; font-weight:700; flex-shrink:0; margin-top:1px;
+    }
+    .project-header-text { flex:1; }
+    .project-title { font-size:15px; font-weight:600; color:var(--text); line-height:1.35; margin-bottom:4px; }
+    .project-status {
+      display:inline-block; font-size:11px; font-weight:600;
+      padding:1px 7px; border-radius:3px; letter-spacing:.03em;
+    }
+    .status-active { background:#e8f5e9; color:#2e7d32; }
+    .status-ongoing { background:#fff8e1; color:#f57f17; }
+
+    .project-body { padding:16px 20px; background:#fafafa; }
+    .project-desc { font-size:13.5px; color:var(--text-muted); line-height:1.7; margin-bottom:14px; max-width:68ch; }
+    .project-papers-label { font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--text-light); margin-bottom:8px; }
+    .project-papers { list-style:none; display:flex; flex-direction:column; gap:6px; }
+    .proj-paper-item { display:flex; align-items:flex-start; gap:8px; font-size:13px; }
+    .proj-paper-item::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--text-light); flex-shrink:0; margin-top:6px; }
+    .proj-paper-venue {
+      display:inline-block; font-size:11px; font-weight:700;
+      padding:1px 5px; border-radius:3px; margin-right:4px;
+      white-space:nowrap; flex-shrink:0;
+    }
+    .proj-paper-text { color:var(--text-muted); line-height:1.4; }
+    .proj-paper-text a { color:var(--text); font-weight:500; }
+    .proj-paper-text a:hover { color:var(--link); }
+    .proj-paper-text .wip { font-style:italic; color:var(--text-light); font-size:12px; }
+
+    /* project 1 colors */
+    .p1 .project-num  { background:var(--proj1-bg); color:var(--proj1); }
+    .p1 .project-header { border-left:3px solid var(--proj1); }
+    .p1 .proj-paper-venue { background:var(--proj1-bg); color:var(--proj1); }
+
+    /* project 2 colors */
+    .p2 .project-num  { background:var(--proj2-bg); color:var(--proj2); }
+    .p2 .project-header { border-left:3px solid var(--proj2); }
+    .p2 .proj-paper-venue { background:var(--proj2-bg); color:var(--proj2); }
+
+    /* project 3 colors */
+    .p3 .project-num  { background:var(--proj3-bg); color:var(--proj3); }
+    .p3 .project-header { border-left:3px solid var(--proj3); }
+    .p3 .proj-paper-venue { background:var(--proj3-bg); color:var(--proj3); }
+
+    /* ── Future direction ── */
+    .future-list { list-style:none; display:flex; flex-direction:column; gap:10px; padding-top:4px; }
+    .future-item { display:flex; align-items:flex-start; gap:10px; font-size:13.5px; color:var(--text-muted); line-height:1.6; }
+    .future-item::before { content:'→'; color:var(--text-light); flex-shrink:0; font-size:13px; padding-top:1px; }
+
+    /* ── Footer ── */
+    .footer-inner { max-width:1100px; margin-inline:auto; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+
+    /* ── Responsive ── */
+    @media (max-width:768px) {
+      .masthead-inner { padding-right:0; justify-content:space-between; padding-inline:16px; }
+      .masthead-nav { display:none; flex-direction:column; position:absolute; top:var(--nav-height); left:0; right:0; background:var(--white); border-bottom:1px solid var(--border); z-index:99; padding:8px 0; }
+      .masthead-nav.open { display:flex; }
+      .masthead-nav a { padding:10px 20px; border-bottom:none; }
+      .nav-toggle { display:flex; }
+      .page-wrapper { grid-template-columns:1fr; }
+      .sidebar { position:static; max-height:none; border-right:none; border-bottom:1px solid var(--border); }
+      .author-avatar { width:90px; height:90px; font-size:2rem; }
+      .main-content { padding:24px 20px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Masthead ── -->
+  <div class="masthead">
+    <div class="masthead-inner">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="masthead-nav" id="mastheadNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="index.html#news">News</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#service">Service</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Page ── -->
+  <div class="page-wrapper">
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar" aria-label="Author information">
+      <div class="author-avatar" aria-label="Profile photo placeholder">MH</div>
+      <div class="author-name">Md. Mahadi Hasan Sibat</div>
+      <div class="author-bio-short">PhD Student</div>
+      <div class="author-affil">
+        Department of Computer Science<br>
+        University of Central Florida<br>
+        Orlando, FL, USA
+      </div>
+
+      <hr class="sidebar-divider" />
+
+      <ul class="sidebar-links">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="plain-text">Orlando, FL, USA</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+          <a href="mailto:mdmahadi.hassan@ucf.edu">Email</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+          <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <a href="https://github.com/sibat119" target="_blank" rel="noopener noreferrer">Github</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <a href="https://www.linkedin.com/in/mahadi-sibat-1105119/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <a href="https://twitter.com/sibat_hasan" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <a href="#" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+        </li>
+      </ul>
+
+      <!-- Quick-jump within this page -->
+      <hr class="sidebar-divider" style="margin-top:20px;" />
+      <div class="sidebar-section-label">On this page</div>
+      <ul class="research-nav" id="researchNav">
+        <li><a href="#vision" class="rn-active"><span class="rn-dot" style="background:#555"></span>Research Vision</a></li>
+        <li><a href="#project1"><span class="rn-dot" style="background:var(--proj1)"></span>IT Automation</a></li>
+        <li><a href="#project2"><span class="rn-dot" style="background:var(--proj2)"></span>Private Eval Protocol</a></li>
+        <li><a href="#project3"><span class="rn-dot" style="background:var(--proj3)"></span>Conv. Data Science</a></li>
+      </ul>
+    </aside>
+
+    <!-- ── Main ── -->
+    <main class="main-content" id="main">
+
+      <!-- Vision -->
+      <section class="page-section" id="vision">
+        <h1 class="section-title">Research Vision</h1>
+        <div class="section-body">
+          <p>
+            My research sits at the intersection of <strong>language model evaluation</strong>,
+            <strong>software engineering</strong>, <strong>data contamination</strong>, and
+            <strong>real-world LM applications</strong>. A common thread runs through all of
+            my work: standard benchmarks and standard evaluation practices frequently fail to
+            tell us what we actually want to know — whether a model can reliably perform a task
+            that matters in practice.
+          </p>
+          <p>
+            I build benchmarks grounded in real practitioner needs (not synthetic proxies),
+            study how contamination silently inflates benchmark scores, and design evaluation
+            protocols that are robust to that contamination. In parallel, I apply these ideas
+            to domains where trustworthy LM behavior matters most: infrastructure automation,
+            financial reasoning, and data science assistance.
+          </p>
+        </div>
+
+        <div class="vision-pillars" aria-label="Research focus areas">
+          <span class="pillar pillar-lme"><span class="dot"></span>LM Evaluation</span>
+          <span class="pillar pillar-se"><span class="dot"></span>Software Engineering</span>
+          <span class="pillar pillar-dc"><span class="dot"></span>Data Contamination</span>
+          <span class="pillar pillar-rw"><span class="dot"></span>Real-World LM Applications</span>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="page-section" id="projects">
+        <h2 class="section-title">Current Research Projects</h2>
+        <div class="projects-list">
+
+          <!-- Project 1 -->
+          <div class="project-card p1" id="project1">
+            <div class="project-header">
+              <div class="project-num">1</div>
+              <div class="project-header-text">
+                <div class="project-title">IT Automation with Language Models</div>
+                <span class="project-status status-active">Active</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p class="project-desc">
+                IT automation tools like Ansible are fundamentally different from general-purpose code generation targets:
+                tasks are <em>stateful</em>, execution happens against live system state, and correctness requires
+                understanding state reconciliation — not just syntactic validity. Existing benchmarks rely on synthetic tasks
+                that miss this entirely. This project builds and evaluates rigorous, execution-based benchmarks that
+                reflect the real needs of practitioners. Our current benchmark, <strong>ITABench</strong>, covers 126
+                diverse Ansible automation tasks evaluated in controlled Docker environments. We also study how LLMs
+                reason (and fail to reason) about state changes, module-specific behaviors, and idempotency — failure
+                modes that do not surface in standard code benchmarks.
+              </p>
+              <div class="project-papers-label">Papers</div>
+              <ul class="project-papers">
+                <li class="proj-paper-item">
+                  <span class="proj-paper-venue">ACL 2026 Findings</span>
+                  <span class="proj-paper-text">
+                    <a href="https://openreview.net/forum?id=48hzAd9xfq" target="_blank" rel="noopener noreferrer">
+                      Large Language Models for IT Automation Tasks: Are We There Yet?
+                    </a>
+                    — Md. Mahadi Hasan Sibat, John Salvador, Akond Ashfaque Ur Rahman, Santu Karmaker
+                  </span>
+                </li>
+                <li class="proj-paper-item">
+                  <span class="proj-paper-venue">FSE 2024</span>
+                  <span class="proj-paper-text">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                      State Reconciliation Defects in Infrastructure as Code
+                    </a>
+                    — Md. Mahadi Hasan Sibat, John Salvador, Santu Karmaker, Akond Ashfaque Ur Rahman
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card p2" id="project2">
+            <div class="project-header">
+              <div class="project-num">2</div>
+              <div class="project-header-text">
+                <div class="project-title">Private Evaluation Protocol — Benchmark Contamination Detection and Mitigation</div>
+                <span class="project-status status-ongoing">In Progress</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p class="project-desc">
+                A growing body of evidence suggests that LLMs have been exposed to popular benchmark datasets during
+                pre-training, causing reported performance to be significantly overestimated. This phenomenon —
+                <em>benchmark contamination</em> — is one of the most underappreciated reliability threats in modern
+                LM evaluation. This project develops principled methods to <strong>detect</strong> whether a model has
+                memorized evaluation data and to <strong>mitigate</strong> contamination effects through private
+                evaluation protocols. Our goal is to make LM evaluation trustworthy even when model training data
+                is opaque. This work directly extends the insights from ITABench, where our use of controlled Docker
+                execution served as one form of contamination mitigation.
+              </p>
+              <div class="project-papers-label">Papers</div>
+              <ul class="project-papers">
+                <li class="proj-paper-item">
+                  <span class="proj-paper-venue">Under Review</span>
+                  <span class="proj-paper-text">
+                    Benchmark Contamination Detection in Language Models
+                    — <span class="wip">Manuscript in preparation (2026)</span>
+                  </span>
+                </li>
+                <li class="proj-paper-item">
+                  <span class="proj-paper-venue">Under Review</span>
+                  <span class="proj-paper-text">
+                    Contamination Mitigation via Private Evaluation Protocols
+                    — <span class="wip">Manuscript in preparation (2026)</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card p3" id="project3">
+            <div class="project-header">
+              <div class="project-num">3</div>
+              <div class="project-header-text">
+                <div class="project-title">Conversational Data Science</div>
+                <span class="project-status status-active">Active</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p class="project-desc">
+                Data science workflows are complex, iterative, and deeply conversational — analysts clarify
+                requirements, explore hypotheses, and refine analyses through dialogue. This project investigates
+                how LLMs can serve as reliable partners in that process, acting as personal data science assistants
+                capable of understanding analytical intent, generating and executing code, and explaining results in
+                natural language. A key contribution is the <em>Forecast Utterance</em> framework, which formalizes
+                how users express predictive queries in natural language — enabling more precise interpretation of
+                analytical requests. We also study where LLM-based DS agents fail, and how to evaluate them rigorously.
+              </p>
+              <div class="project-papers-label">Papers</div>
+              <ul class="project-papers">
+                <li class="proj-paper-item">
+                  <span class="proj-paper-venue">TMLR 2024</span>
+                  <span class="proj-paper-text">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                      Introducing Forecast Utterance for Conversational Data Science
+                    </a>
+                    — Md. Mahadi Hasan Sibat, R. Alexander Knipper, Shubhra Kanti Karmaker Santu
+                  </span>
+                </li>
+                <li class="proj-paper-item">
+                  <span class="proj-paper-venue">ACM CSUR 2022</span>
+                  <span class="proj-paper-text">
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3470918" target="_blank" rel="noopener noreferrer">
+                      AutoML to Date and Beyond: Challenges and Opportunities
+                    </a>
+                    — Shubhra Kanti Karmaker Santu, Md. Mahadi Hasan Sibat, et al.
+                  </span>
+                </li>
+                <li class="proj-paper-item">
+                  <span class="proj-paper-venue">In Progress</span>
+                  <span class="proj-paper-text">
+                    LLM as Personal Data Scientist: Evaluation and Failure Analysis
+                    — <span class="wip">Manuscript in preparation (2026)</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer style="border-top:1px solid var(--border);background:var(--white);padding:14px 40px;font-size:12px;color:var(--text-light);">
+    <div class="footer-inner">
+      <span>© 2026 Md. Mahadi Hasan Sibat &nbsp;·&nbsp; University of Central Florida</span>
+      <span>Last updated: April 2026</span>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const nav = document.getElementById('mastheadNav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Sidebar quick-jump active state on scroll
+    const rnLinks = document.querySelectorAll('.research-nav a');
+    const anchors = ['vision','project1','project2','project3'].map(id => document.getElementById(id));
+    const onScroll = () => {
+      let current = anchors[0];
+      anchors.forEach(el => { if (el && window.scrollY + 100 >= el.offsetTop) current = el; });
+      rnLinks.forEach(l => {
+        l.classList.toggle('rn-active', l.getAttribute('href') === '#' + current.id);
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+  </script>
+</body>
 </html>

@@ -1,262 +1,733 @@
-<!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Homepage</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md. Mahadi Hasan Sibat — PhD Researcher, UCF</title>
+  <meta name="description" content="PhD researcher at UCF working on LLM evaluation, benchmark contamination, and IT automation. Author of ITABench (ACL 2026)." />
+  <meta property="og:title" content="Md. Mahadi Hasan Sibat" />
+  <meta property="og:description" content="PhD researcher at UCF. LLM evaluation, benchmark contamination, IT automation." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff;
+      --bg: #f5f5f5;
+      --sidebar-bg: #ffffff;
+      --text: #222222;
+      --text-muted: #555555;
+      --text-light: #888888;
+      --link: #2a7ae2;
+      --link-hover: #1a5fc0;
+      --border: #e0e0e0;
+      --accent: #2a7ae2;
+      --sidebar-width: 280px;
+      --nav-height: 44px;
+    }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
+    p { text-wrap: pretty; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#top">Welcome</a></li>
-					<li><a href="research.html">Research</a></li>
-					<li><a href="#papers">Publications</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#teaching">Teaching & Awards</a></li>
-					<li><a href="#academics">Academic Training</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
+    /* ── Top Nav ── */
+    .masthead {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .masthead-inner {
+      max-width: 1100px;
+      margin-inline: auto;
+      padding: 0 var(--sidebar-width) 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .masthead-nav {
+      display: flex;
+      list-style: none;
+    }
+    .masthead-nav a {
+      display: block;
+      padding: 12px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .masthead-nav a:hover {
+      color: var(--text);
+      border-bottom-color: var(--accent);
+      text-decoration: none;
+    }
+    .masthead-nav a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
 
-		<!-- Home -->
-			<article id="top" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img src="images/IMG_0571.jpeg" alt="" /></span>
-						</div>
-						<div class="col-8 col-7-large col-12-medium">
-							<h2>Welcome to my personal homepage</h2>
-							<p>
-								My name is Md. Mahadi Hassan (“Sibat”). I am a Graduate student in the <a href="https://www.eng.auburn.edu/comp/" target="_blank">department of Computer Science and Software Enginering</a> at Auburn University, Alabama.
-								I joined at the Auburn University as a Ph.D. student from fall 2021 and I am currently working with <a href="https://karmake2.github.io/" target="_blank">Dr. Shubhra Kanti Karmaker (“Santu”)</a> as a graduate research assistant.
-								My primary research interest lies at the intersection of Artificial Intelligence and Natural Language Processing. 
-								My current research focuses on the extraction of information from natural languages as well as defining language models for Spiking Neural Networks.
-							</p>
-							
-						</div>
-					</div>
-				</div>
-			</article>
+    /* ── Mobile nav toggle ── */
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 44px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+    }
 
-		<!-- Work -->
-			<article id="work" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h1>Current Research Projects</h1>
-						
-					</header>
-					<div class="row aln-center">
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured fa-comments"></span>
-								<h3><a href="vids.html" target="_blank">VIDS: Virtual Interactive Data Scientist</a></h3>
-								<p>What if an AI agent can serve you as your personal data scientist? Isn’t that cool?</p>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon solid featured fa-brain"></span>
-								<h3><a target="_blank" href="spiking.html">Spiking Neural Networks</a></h3>
-								<p>Can we build language models for spiking domain?</p>
-							</section>
-						</div>
-						
-					</div>
-					
-				</div>
-			</article>
+    /* ── Page Layout ── */
+    .page-wrapper {
+      max-width: 1100px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: var(--sidebar-width) 1fr;
+      min-height: calc(100vh - var(--nav-height));
+      align-items: start;
+    }
 
-		<!-- Papers -->
-		<article id="papers" class="wrapper style3">
-			<div class="container" style="text-align: left !important">
-				<header>
-					<h1>Published Works.</h1>
-				</header>
-				<ol>
-					
-					<li>
-						Shubhra Kanti Karmaker (“Santu”), <b>Mahadi Hassan</b>, Micah J. Smith, Lei Xu, Chengxiang Zhai, Kalyan Veeramachaneni 
-						<b>"AutoML to Date and Beyond: Challenges and Opportunities"</b> in ACM Computing Surveys 2022.
-						<a target="_blank" href="https://dl.acm.org/doi/abs/10.1145/3470918">Paper</a>
-					</li>
-					
-					
-					<li>
-						Yuan-Cheng Lai, Ahsan Ali, <b>Md. Mahadi Hassan</b>, Md. Shohrab Hossain, Ying-Dar Lin.
-						<b>"Performance modeling and analysis of TCP connections over software defined networks"</b> in GLOBECOM 2017 - 2017 IEEE Global Communications Conference.
-						<a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/8254078/">Paper</a>
-					</li>
-					
-					
-				</ol>
-			</div>
-		</article>
+    /* ── Sidebar ── */
+    .sidebar {
+      background: var(--white);
+      border-right: 1px solid var(--border);
+      padding: 32px 20px 40px;
+      position: sticky;
+      top: var(--nav-height);
+      max-height: calc(100vh - var(--nav-height));
+      overflow-y: auto;
+    }
+    .author-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 16px;
+      background: #dce8f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--accent);
+      letter-spacing: -1px;
+    }
+    .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .author-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .author-bio-short {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+    .author-affil {
+      font-size: 12px;
+      color: var(--text-light);
+      text-align: center;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .sidebar-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 14px 0;
+    }
+    .sidebar-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .sidebar-links li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .sidebar-links li svg,
+    .sidebar-links li .link-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      color: var(--text-light);
+    }
+    .sidebar-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .sidebar-links a:hover { color: var(--link); text-decoration: underline; }
+    .sidebar-links .plain-text { color: var(--text-muted); }
+    .sidebar-section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      margin-top: 18px;
+    }
 
-		<!-- Portfolio -->
-			<article id="portfolio" class="wrapper style3">
-				
-				<div class="container" style="text-align: left !important">
-					<header>
-						<h1>Profesional Experiance</h1>
-					</header>
-					<div class="row">
-						<div class="col-2 col-2-large col-12-medium">
-							<span class="image fit"><img style="height: 100px; width: 100px;" src="images/au.jpg" alt="" /></span>
-						</div>
-						<div class="col-10 col-10-large col-12-medium">
-							<p>
-								Graduate Research & Teaching Assistant, August 2021 - Current,
-								Auburn University, Auburn, AL 36849, USA
-							</p>
-							<p>Department: <a href="https://www.eng.auburn.edu/comp/" target="_blank">Computer Science and Software Enginering</a></p>
-							<p>Supervisor: <a href="https://karmake2.github.io/" target="_blank">Dr. Shubhra Kanti Karmaker (“Santu”)</a> </p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-2 col-2-large col-12-medium">
-							<span class="image fit"><img style="height: 100px; width: 100px;" src="images/reve.png" alt="" /></span>
-						</div>
-						<div class="col-10 col-10-large col-12-medium">
-							<p>
-								Senior Software Engineer, September 2017 - December 2020,
-								Reve Systems, Plot-94 Purbachal Express Hwy, Dhaka
-							</p>
-							<p>Department: Research & Development in E-gov.</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-2 col-2-large col-12-medium">
-							<span class="image fit"><img style="height: 100px; width: 100px;" src="images/enosis.png" alt="" /></span>
-						</div>
-						<div class="col-10 col-10-large col-12-medium">
-							<p>
-								Software Engineer - 1, March 2017 - September 2017,
-								Enosis Solutions, Road 32, House 16, Gulshan-1, Dhaka.
-							</p>
-							<p>Department: Research & Development</p>
-						</div>
-					</div>
-				</div>
-				<!-- <a href="#contact" class="button scrolly">Contact with me</a> -->
-			</article>
+    /* ── Main Content ── */
+    .main-content {
+      background: var(--white);
+      padding: 36px 40px 60px;
+      border-left: none;
+      min-height: 100%;
+    }
 
-		<!-- Teaching and Awards -->
-		<article id="teaching" class="wrapper style3">
-			<div class="container" style="text-align: left !important">
-				<header>
-					<h2>Teaching Assistant at Auburn University</h2>
-				</header>
-				<div class="row">
-					<ul>
-						<li>
-							<p>Fall 2021 - Database I (CPSC-5120-AO1)</p>
-						</li>
-						<li>
-							<p>Fall 2021 - Algorithms II (CPSC-3280-AO2)</p>
-						</li>
-					</ul>
-				</div>
-				<header>
-					<h2>Awards</h2>
-				</header>
-				<div class="row">
-					<ul>
-						<li><p>I have been awarded the prestegious <b>Walt and Virginia Woltosz Fellowship – Type II</b> from Fall-2021.</p></li>
-					</ul>
-					
-				</div>
-			</div>
-		</article>
+    /* ── Page Sections ── */
+    .page-section { margin-bottom: 36px; }
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-body {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .section-body p { margin-bottom: 12px; max-width: 72ch; }
+    .section-body p:last-child { margin-bottom: 0; }
+    .section-body strong { font-weight: 600; }
 
-		<!-- Academic Training -->
-		<article id="academics" class="wrapper style3">
-			<div class="container" style="text-align: left !important">
-				<header>
-					<h2>Academic Training</h2>
-				</header>
-				<div class="row">
-					<div class="col-md-2">
-						<img src="images/au.jpg" style="height: auto; width: 100px;">
-					</div>
-					<div class="col-md-10">
-						<p><span style="color: brown;">Auburn University</span> <br>
-							Ph.D. in Computer Science and Software Engineering</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-2">
-						<img src="images/buet.png" style="height: auto; width: 100px;">
-					</div>
-					<div class="col-md-10">
-						<p><span style="color: brown;">Bangladesh University of Engineering and technology</span> <br>
-							B.SC in Computer Science and Engineering.</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-2">
-						<img src="images/kgc.jpg" style="height: auto; width: 100px;">
-					</div>
-					<div class="col-md-10">
-						<p><span style="color: brown;">Kushtia Govt. College</span> <br>
-							Higher Secondary School Certificate Exam. <br>Gpa: 5.00/5.00(Science)</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-2">
-						<img src="images/kzs.png" style="height: auto; width: 100px;">
-					</div>
-					<div class="col-md-10">
-						<p><span style="color: brown;">Kushtia Zilla School</span> <br>
-							Secondary School Certificate Exam. <br>Gpa: 5.00/5.00(Science)</p>
-					</div>
-				</div>
-			</div>
-		</article>
-		<!-- Contact -->
-			<article id="contact" class="wrapper style4">
-				<div class="container medium">
-					<header>
-						<h1>Contact Me! </h1>
-					</header>
-					<div class="row">
-						<div class="col-12">
-							<h4>
-								If you have any questions or comments, please feel free to contact me at mzh0167 (at) auburn (dot) edu or at sibathasan (at) gmail (dot) com.
-							</h4>
-							
-							<hr />
-							<h3>Find me on ...</h3>
-							<ul class="social">
-								<li><a target="_blank" href="https://twitter.com/sibat_hasan" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a target="_blank" href="https://www.facebook.com/mahadihasan.sibat/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a target="_blank" href="https://www.linkedin.com/in/mahadi-sibat-1105119/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a target="_blank" href="https://github.com/sibat119" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								
-							</ul>
-							
-						</div>
-					</div>
-				</div>
-			</article>
+    /* ── News ── */
+    .news-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .news-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-date {
+      color: var(--text-light);
+      font-size: 12.5px;
+      font-weight: 500;
+      padding-top: 1px;
+      white-space: nowrap;
+    }
+    .news-text { color: var(--text-muted); }
+    .news-text a { color: var(--link); }
+    .news-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+    .badge-acl { background: #dceeff; color: #1a5fc0; }
+    .badge-fse { background: #e8f5e9; color: #2e7d32; }
+    .badge-tmlr { background: #f3e5f5; color: #6a1b9a; }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    /* ── Publications ── */
+    .pub-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .pub-entry {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .pub-entry:last-child { border-bottom: none; }
+    .pub-venue-line {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .venue-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 3px;
+      letter-spacing: 0.03em;
+    }
+    .vtag-acl-main { background: #dceeff; color: #1a5fc0; }
+    .vtag-acl-findings { background: #fff3e0; color: #e65100; }
+    .vtag-fse { background: #e8f5e9; color: #2e7d32; }
+    .vtag-tmlr { background: #f3e5f5; color: #6a1b9a; }
+    .vtag-survey { background: #fce4ec; color: #880e4f; }
+    .vtag-review { background: #f5f5f5; color: #757575; }
+    .pub-title-line {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 3px;
+    }
+    .pub-title-line a { color: var(--text); }
+    .pub-title-line a:hover { color: var(--link); text-decoration: underline; }
+    .pub-authors-line {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .pub-authors-line strong { font-weight: 600; color: var(--text); }
+    .pub-links-line { margin-top: 4px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .pub-link-btn {
+      font-size: 11.5px;
+      color: var(--link);
+      border: 1px solid #c0d8f5;
+      border-radius: 3px;
+      padding: 1px 7px;
+      text-decoration: none;
+      transition: background 0.12s;
+    }
+    .pub-link-btn:hover { background: #dceeff; text-decoration: none; }
 
-	</body>
+    /* ── Research Interests ── */
+    .interests-list {
+      list-style: disc;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .interests-list li {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
 
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      padding: 16px 40px;
+      font-size: 12px;
+      color: var(--text-light);
+      max-width: 1100px;
+      margin-inline: auto;
+      grid-column: 1 / -1;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin-inline: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .masthead-inner { padding-right: 0; justify-content: space-between; padding-inline: 16px; }
+      .masthead-nav { display: none; flex-direction: column; position: absolute; top: var(--nav-height); left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--border); z-index: 99; padding: 8px 0; }
+      .masthead-nav.open { display: flex; }
+      .masthead-nav a { padding: 10px 20px; border-bottom: none; }
+      .nav-toggle { display: flex; }
+      .page-wrapper { grid-template-columns: 1fr; }
+      .sidebar { position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--border); }
+      .author-avatar { width: 90px; height: 90px; font-size: 2rem; }
+      .main-content { padding: 24px 20px 40px; }
+      .news-item { grid-template-columns: 1fr; gap: 2px; }
+      .news-date { font-size: 12px; }
+      .site-footer { padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Masthead ── -->
+  <div class="masthead">
+    <div class="masthead-inner">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="masthead-nav" id="mastheadNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="research.html">Research</a>
+      <a href="#news">News</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#service">Service</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Page ── -->
+  <div class="page-wrapper">
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar" aria-label="Author information">
+      <div class="author-avatar" aria-label="Profile photo placeholder">MH</div>
+      <div class="author-name">Md. Mahadi Hasan Sibat</div>
+      <div class="author-bio-short">PhD Student</div>
+      <div class="author-affil">
+        Department of Computer Science<br>
+        University of Central Florida<br>
+        Orlando, FL, USA
+      </div>
+
+      <hr class="sidebar-divider" />
+
+      <ul class="sidebar-links">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="plain-text">Orlando, FL, USA</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+          <a href="mailto:mdmahadi.hassan@ucf.edu">Email</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+          <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <a href="https://github.com/sibat119" target="_blank" rel="noopener noreferrer">Github</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <a href="https://www.linkedin.com/in/mahadi-sibat-1105119/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <a href="https://twitter.com/sibat_hasan" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <a href="#" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+        </li>
+      </ul>
+
+      <hr class="sidebar-divider" style="margin-top:20px;" />
+      <div class="sidebar-section-label">Advisor</div>
+      <ul class="sidebar-links">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <a href="https://karmake2.github.io/" target="_blank" rel="noopener noreferrer">Dr. Santu Karmaker</a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- ── Main ── -->
+    <main class="main-content" id="main">
+
+      <!-- About -->
+      <section class="page-section" id="about">
+        <h1 class="section-title">Welcome to my homepage</h1>
+        <div class="section-body">
+          <p>
+            My name is Md. Mahadi Hasan Sibat. I am a second-year PhD student in the
+            <a href="https://www.cs.ucf.edu/" target="_blank" rel="noopener noreferrer">Department of Computer Science</a>
+            at the <strong>University of Central Florida (UCF)</strong>, advised by
+            <a href="https://karmake2.github.io/" target="_blank" rel="noopener noreferrer">Dr. Shubhra Kanti Karmaker (Santu)</a>.
+            I am a member of the
+            <a href="https://karmake2.github.io/bridgeAI/" target="_blank" rel="noopener noreferrer">Bridge-AI Lab</a> at UCF.
+          </p>
+          <p>
+            My research focuses on the <strong>evaluation and trustworthiness of large language models</strong>.
+            In particular, I am interested in building rigorous benchmarks that expose failure modes in LLMs on real-world tasks,
+            and in developing methods to detect and mitigate <strong>benchmark contamination</strong> — a pervasive problem that
+            causes reported model performance to be systematically overestimated.
+          </p>
+          <p>
+            Before joining UCF, I completed my MS in Computer Science (Software Engineering) at
+            <strong>Auburn University</strong>, where I also worked as a Graduate Research and Teaching Assistant.
+            Prior to academia, I worked as a <strong>Senior Software Engineer</strong> at Reve Systems in Bangladesh for over three years.
+          </p>
+          <p>
+            You can download my full CV <a href="#">here</a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- Research Interests -->
+      <section class="page-section" id="research">
+        <h2 class="section-title">Research Interests</h2>
+        <ul class="interests-list">
+          <li>LLM Evaluation &amp; Benchmarking</li>
+          <li>Benchmark Contamination Detection and Mitigation</li>
+          <li>IT Automation and Infrastructure as Code (Ansible, IaC)</li>
+          <li>Code Generation for Real-World Tasks</li>
+          <li>Natural Language Processing and its Applications</li>
+          <li>Conversational Data Science</li>
+        </ul>
+      </section>
+
+      <!-- News -->
+      <section class="page-section" id="news">
+        <h2 class="section-title">News and Announcements</h2>
+        <ul class="news-list">
+          <li class="news-item">
+            <span class="news-date">[April 2026]</span>
+            <span class="news-text">
+              <span class="news-badge badge-acl">ACL 2026</span>
+              Our paper <em><a href="https://openreview.net/forum?id=48hzAd9xfq" target="_blank" rel="noopener noreferrer">Large Language Models for IT Automation Tasks: Are We There Yet?</a></em>
+              has been accepted to <strong>ACL 2026 Findings</strong>. We present ITABench, a benchmark of 126 real-world Ansible tasks. Best model achieves only 23.9% pass@10.
+            </span>
+          </li>
+          <li class="news-item">
+            <span class="news-date">[April 2026]</span>
+            <span class="news-text">
+              <span class="news-badge badge-acl">ACL 2026</span>
+              Our paper <em>The Path Not Taken: Duality in Reasoning about Program Execution</em>
+              has been accepted to the <strong>ACL 2026 Main Conference</strong> (co-authored with Eshgin Hasanov, Santu Karmaker, and Aashish Yadavally).
+            </span>
+          </li>
+          <li class="news-item">
+            <span class="news-date">[Aug 2024]</span>
+            <span class="news-text">
+              Joined the <strong>University of Central Florida</strong> as a PhD student, advised by Dr. Santu Karmaker.
+            </span>
+          </li>
+          <li class="news-item">
+            <span class="news-date">[2024]</span>
+            <span class="news-text">
+              <span class="news-badge badge-fse">FSE 2024</span>
+              Paper accepted at <strong>FSE 2024</strong>: <em>State Reconciliation Defects in Infrastructure as Code</em>.
+            </span>
+          </li>
+          <li class="news-item">
+            <span class="news-date">[2024]</span>
+            <span class="news-text">
+              <span class="news-badge badge-tmlr">TMLR</span>
+              Paper accepted at <strong>TMLR 2024</strong>: <em>Introducing Forecast Utterance for Conversational Data Science</em>.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Publications -->
+      <section class="page-section" id="publications">
+        <h2 class="section-title">Publications</h2>
+        <ul class="pub-list">
+
+          <li class="pub-entry">
+            <div class="pub-venue-line">
+              <span class="venue-tag vtag-acl-findings">ACL 2026 Findings</span>
+              <span style="color:#aaa">·</span> 2026
+              <span style="color:#aaa">·</span> <strong style="color:#555;font-size:12px;">First Author</strong>
+            </div>
+            <div class="pub-title-line">
+              <a href="https://openreview.net/forum?id=48hzAd9xfq" target="_blank" rel="noopener noreferrer">
+                Large Language Models for IT Automation Tasks: Are We There Yet?
+              </a>
+            </div>
+            <div class="pub-authors-line">
+              <strong>Md. Mahadi Hasan Sibat</strong>, John Salvador, Akond Ashfaque Ur Rahman, Shubhra Kanti Karmaker Santu
+            </div>
+            <div class="pub-links-line">
+              <a href="https://openreview.net/forum?id=48hzAd9xfq" class="pub-link-btn" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </li>
+
+          <li class="pub-entry">
+            <div class="pub-venue-line">
+              <span class="venue-tag vtag-acl-main">ACL 2026 Main</span>
+              <span style="color:#aaa">·</span> 2026
+              <span style="color:#aaa">·</span> <span style="font-size:12px;color:#555;">Second Author</span>
+            </div>
+            <div class="pub-title-line">
+              The Path Not Taken: Duality in Reasoning about Program Execution
+            </div>
+            <div class="pub-authors-line">
+              Eshgin Hasanov, <strong>Md. Mahadi Hasan Sibat</strong>, Santu Karmaker, Aashish Yadavally
+            </div>
+          </li>
+
+          <li class="pub-entry">
+            <div class="pub-venue-line">
+              <span class="venue-tag vtag-fse">FSE 2024</span>
+              <span style="color:#aaa">·</span> 2024
+              <span style="color:#aaa">·</span> <strong style="color:#555;font-size:12px;">First Author</strong>
+            </div>
+            <div class="pub-title-line">
+              State Reconciliation Defects in Infrastructure as Code
+            </div>
+            <div class="pub-authors-line">
+              <strong>Md. Mahadi Hasan Sibat</strong>, John Salvador, Shubhra Kanti Karmaker Santu, Akond Ashfaque Ur Rahman
+            </div>
+            <div class="pub-links-line">
+              <a href="#" class="pub-link-btn" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </li>
+
+          <li class="pub-entry">
+            <div class="pub-venue-line">
+              <span class="venue-tag vtag-tmlr">TMLR 2024</span>
+              <span style="color:#aaa">·</span> 2024
+              <span style="color:#aaa">·</span> <strong style="color:#555;font-size:12px;">First Author</strong>
+            </div>
+            <div class="pub-title-line">
+              Introducing Forecast Utterance for Conversational Data Science
+            </div>
+            <div class="pub-authors-line">
+              <strong>Md. Mahadi Hasan Sibat</strong>, R. Alexander Knipper, Shubhra Kanti Karmaker Santu
+            </div>
+            <div class="pub-links-line">
+              <a href="#" class="pub-link-btn" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </li>
+
+          <li class="pub-entry">
+            <div class="pub-venue-line">
+              <span class="venue-tag vtag-survey">ACM CSUR 2022</span>
+              <span style="color:#aaa">·</span> 2022
+            </div>
+            <div class="pub-title-line">
+              <a href="https://dl.acm.org/doi/abs/10.1145/3470918" target="_blank" rel="noopener noreferrer">
+                AutoML to Date and Beyond: Challenges and Opportunities
+              </a>
+            </div>
+            <div class="pub-authors-line">
+              Shubhra Kanti Karmaker Santu, <strong>Md. Mahadi Hasan Sibat</strong>, Micah J. Smith, Lei Xu, Chengxiang Zhai, Kalyan Veeramachaneni
+            </div>
+            <div class="pub-links-line">
+              <a href="https://dl.acm.org/doi/abs/10.1145/3470918" class="pub-link-btn" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </li>
+
+          <li class="pub-entry">
+            <div class="pub-venue-line">
+              <span class="venue-tag vtag-review">Under Review · ARR 2026</span>
+              <span style="color:#aaa">·</span> <strong style="color:#555;font-size:12px;">First Author</strong>
+            </div>
+            <div class="pub-title-line">
+              FinTradeBench: A Financial Reasoning Benchmark for LLMs
+            </div>
+            <div class="pub-authors-line">
+              Yogesh Agrawal, Aniruddha Dutta, <strong>Md. Mahadi Hasan Sibat</strong>, Santu Karmaker, Aritra Dutta
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+      <!-- Experience -->
+      <section class="page-section" id="experience">
+        <h2 class="section-title">Experience &amp; Education</h2>
+        <ul class="pub-list">
+          <li class="pub-entry">
+            <div class="pub-venue-line">Fall 2024 — Present</div>
+            <div class="pub-title-line" style="font-weight:600;">PhD in Computer Science</div>
+            <div class="pub-authors-line">University of Central Florida, Orlando FL &nbsp;·&nbsp; Advisor: Dr. Santu Karmaker</div>
+          </li>
+          <li class="pub-entry">
+            <div class="pub-venue-line">Aug 2021 — Aug 2024</div>
+            <div class="pub-title-line" style="font-weight:600;">MS in Computer Science (Software Engineering)</div>
+            <div class="pub-authors-line">Auburn University, Auburn AL &nbsp;·&nbsp; Woltosz Fellowship (2021–2024)</div>
+          </li>
+          <li class="pub-entry">
+            <div class="pub-venue-line">Sep 2017 — Dec 2020</div>
+            <div class="pub-title-line" style="font-weight:600;">Senior Software Engineer</div>
+            <div class="pub-authors-line">Reve Systems, Dhaka, Bangladesh</div>
+          </li>
+          <li class="pub-entry">
+            <div class="pub-venue-line">2012 — 2017</div>
+            <div class="pub-title-line" style="font-weight:600;">B.Sc. in Computer Science &amp; Engineering</div>
+            <div class="pub-authors-line">Bangladesh University of Engineering and Technology (BUET)</div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Service -->
+      <section class="page-section" id="service">
+        <h2 class="section-title">Academic Service</h2>
+        <ul class="pub-list">
+          <li class="pub-entry">
+            <div class="pub-venue-line">2023</div>
+            <div class="pub-title-line" style="font-weight:500;font-size:13.5px;">Track Committee Member — ACL 2023</div>
+          </li>
+          <li class="pub-entry">
+            <div class="pub-venue-line">2022</div>
+            <div class="pub-title-line" style="font-weight:500;font-size:13.5px;">Track Committee Member — EMNLP 2022</div>
+          </li>
+          <li class="pub-entry">
+            <div class="pub-venue-line">2023, 2025, 2026</div>
+            <div class="pub-title-line" style="font-weight:500;font-size:13.5px;">Reviewer — ACL Rolling Review (ARR)</div>
+          </li>
+          <li class="pub-entry">
+            <div class="pub-venue-line">2024, 2025</div>
+            <div class="pub-title-line" style="font-weight:500;font-size:13.5px;">Reviewer — Transactions on Machine Learning Research (TMLR)</div>
+          </li>
+          <li class="pub-entry">
+            <div class="pub-venue-line">2023</div>
+            <div class="pub-title-line" style="font-weight:500;font-size:13.5px;">Reviewer — EMNLP 2023, Workshop BLP</div>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer style="border-top:1px solid var(--border);background:var(--white);padding:14px 40px;font-size:12px;color:var(--text-light);">
+    <div class="footer-inner">
+      <span>© 2026 Md. Mahadi Hasan Sibat &nbsp;·&nbsp; University of Central Florida</span>
+      <span>Last updated: April 2026</span>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const nav = document.getElementById('mastheadNav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.masthead-nav a');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.masthead-nav a[href="#${e.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3 });
+    sections.forEach(s => observer.observe(s));
+  </script>
+</body>
 </html>
