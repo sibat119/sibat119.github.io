@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research — Md. Mahadi Hasan Sibat</title>
-  <meta name="description" content="Research on evaluation integrity for AI systems: private evaluation, benchmark contamination, execution-grounded testing, and benchmark maintenance." />
+  <meta name="description" content="Research on evaluation integrity for AI systems: measurement validity, attribution integrity, private evaluation, benchmark maintenance, and evolving-world evaluation." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -80,6 +80,70 @@
     .section-body { font-size:14px; color:var(--text); line-height:1.7; }
     .section-body p { margin-bottom:12px; max-width:72ch; }
     .section-body p:last-child { margin-bottom:0; }
+
+    /* ── Research hero ── */
+    .research-hero { padding:4px 0 34px; border-bottom:1px solid var(--border); margin-bottom:36px; }
+    .hero-kicker { font-size:11px; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+    .research-hero h1 { font-size:30px; line-height:1.2; letter-spacing:-.025em; font-weight:600; max-width:650px; margin-bottom:14px; }
+    .hero-thesis { font-size:17px; line-height:1.65; color:var(--text-muted); max-width:67ch; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .hero-action { display:inline-flex; align-items:center; gap:7px; padding:8px 13px; border:1px solid var(--border); border-radius:5px; font-size:12.5px; font-weight:600; color:var(--text-muted); background:var(--white); }
+    .hero-action:hover { border-color:#b8cce8; color:var(--link); text-decoration:none; background:#f7faff; }
+    .hero-action.primary { color:#fff; background:var(--accent); border-color:var(--accent); }
+    .hero-action.primary:hover { color:#fff; background:var(--link-hover); border-color:var(--link-hover); }
+
+    /* ── Integrity framework ── */
+    .framework-intro { color:var(--text-muted); max-width:70ch; margin-bottom:16px; }
+    .framework-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .framework-card { border:1px solid var(--border); border-radius:7px; padding:20px; position:relative; overflow:hidden; }
+    .framework-card::before { content:''; position:absolute; inset:0 auto 0 0; width:3px; background:var(--proj1); }
+    .framework-card.attribution::before { background:var(--proj2); }
+    .framework-label { font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--text-light); margin-bottom:7px; }
+    .framework-card h3 { font-size:16px; font-weight:600; margin-bottom:7px; }
+    .framework-question { font-size:13.5px; line-height:1.55; color:var(--text-muted); min-height:44px; }
+    .framework-topics { list-style:none; display:flex; flex-wrap:wrap; gap:6px; margin-top:15px; }
+    .framework-topics li { font-size:11.5px; padding:3px 8px; border-radius:12px; background:var(--proj1-bg); color:var(--proj1); }
+    .attribution .framework-topics li { background:var(--proj2-bg); color:var(--proj2); }
+
+    /* ── Foundation chain ── */
+    .foundation-chain { display:grid; grid-template-columns:1fr 24px 1fr 24px 1fr; align-items:stretch; gap:8px; margin:16px 0 18px; }
+    .foundation-step { border:1px solid var(--border); border-radius:6px; padding:15px; background:#fafafa; }
+    .foundation-num { font-size:10px; font-weight:700; color:var(--text-light); letter-spacing:.08em; margin-bottom:5px; }
+    .foundation-step h3 { font-size:13.5px; line-height:1.35; margin-bottom:5px; }
+    .foundation-step p { font-size:12px; color:var(--text-muted); line-height:1.5; }
+    .foundation-arrow { display:flex; align-items:center; justify-content:center; color:var(--text-light); font-size:17px; }
+    .evidence-strip { display:flex; flex-wrap:wrap; gap:8px; }
+    .evidence-item { font-size:11.5px; color:var(--text-muted); border-left:2px solid var(--border); padding-left:8px; }
+    .evidence-item strong { color:var(--text); font-weight:600; }
+
+    /* ── Benchmark lifecycle ── */
+    .lifecycle { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:18px; counter-reset:lifecycle; }
+    .lifecycle-stage { position:relative; padding:18px 16px 16px; border:1px solid var(--border); border-right:0; background:#fafafa; }
+    .lifecycle-stage:first-child { border-radius:7px 0 0 7px; }
+    .lifecycle-stage:last-child { border-right:1px solid var(--border); border-radius:0 7px 7px 0; }
+    .lifecycle-stage:not(:last-child)::after { content:''; position:absolute; z-index:2; top:26px; right:-5px; width:9px; height:9px; border-top:1px solid #bbb; border-right:1px solid #bbb; transform:rotate(45deg); background:#fafafa; }
+    .lifecycle-num { width:23px; height:23px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--white); border:1px solid var(--border); font-size:10px; font-weight:700; color:var(--text-light); margin-bottom:10px; }
+    .lifecycle-stage h3 { font-size:13px; line-height:1.35; margin-bottom:7px; }
+    .lifecycle-stage p { font-size:11.5px; line-height:1.55; color:var(--text-muted); }
+    .program-detail { margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .program-item { padding:14px 16px; border-left:2px solid var(--proj2); background:#fafafa; }
+    .program-item h3 { font-size:13px; margin-bottom:4px; }
+    .program-item p { font-size:12.5px; line-height:1.6; color:var(--text-muted); }
+
+    /* ── Evolving worlds frontier ── */
+    .frontier { border:1px solid #cdddee; border-radius:8px; overflow:hidden; background:linear-gradient(135deg,#f7faff 0%,#fff 68%); }
+    .frontier-header { display:grid; grid-template-columns:1.25fr .75fr; gap:28px; padding:24px; border-bottom:1px solid #dbe6f2; }
+    .frontier-kicker { font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--proj1); font-weight:700; margin-bottom:7px; }
+    .frontier h2 { font-size:20px; line-height:1.3; margin-bottom:9px; }
+    .frontier-summary { font-size:13.5px; line-height:1.65; color:var(--text-muted); }
+    .world-model { display:flex; flex-direction:column; justify-content:center; gap:7px; }
+    .world-model-row { display:grid; grid-template-columns:1fr 16px 1fr; align-items:center; font-size:10.5px; text-align:center; color:var(--text-muted); }
+    .world-model-box { border:1px solid #cbd9e8; background:rgba(255,255,255,.8); padding:6px 5px; border-radius:4px; }
+    .frontier-questions { display:grid; grid-template-columns:repeat(3,1fr); }
+    .frontier-question { padding:17px 18px; border-right:1px solid #dbe6f2; }
+    .frontier-question:last-child { border-right:none; }
+    .frontier-question span { display:block; font-size:10px; font-weight:700; color:var(--proj1); margin-bottom:5px; }
+    .frontier-question p { font-size:12px; line-height:1.55; color:var(--text-muted); }
 
     /* ── Vision pillars ── */
     .vision-pillars { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 6px; }
@@ -171,6 +235,16 @@
       .sidebar { position:static; max-height:none; border-right:none; border-bottom:1px solid var(--border); }
       .author-avatar { width:90px; height:90px; font-size:2rem; }
       .main-content { padding:24px 20px 40px; }
+      .research-hero h1 { font-size:25px; }
+      .framework-grid, .program-detail, .frontier-header { grid-template-columns:1fr; }
+      .foundation-chain { grid-template-columns:1fr; }
+      .foundation-arrow { transform:rotate(90deg); height:14px; }
+      .lifecycle { grid-template-columns:1fr; gap:8px; }
+      .lifecycle-stage, .lifecycle-stage:first-child, .lifecycle-stage:last-child { border:1px solid var(--border); border-radius:6px; }
+      .lifecycle-stage:not(:last-child)::after { display:none; }
+      .frontier-questions { grid-template-columns:1fr; }
+      .frontier-question { border-right:none; border-bottom:1px solid #dbe6f2; }
+      .frontier-question:last-child { border-bottom:none; }
     }
   </style>
 </head>
@@ -247,9 +321,10 @@
       <div class="sidebar-section-label">On this page</div>
       <ul class="research-nav" id="researchNav">
         <li><a href="#vision" class="rn-active"><span class="rn-dot" style="background:#555"></span>Research Vision</a></li>
-        <li><a href="#project1"><span class="rn-dot" style="background:var(--proj1)"></span>Observed Behavior</a></li>
-        <li><a href="#project2"><span class="rn-dot" style="background:var(--proj2)"></span>Private Evaluation</a></li>
-        <li><a href="#project3"><span class="rn-dot" style="background:var(--proj3)"></span>Benchmark Life Cycle</a></li>
+        <li><a href="#framework"><span class="rn-dot" style="background:var(--proj1)"></span>Integrity Framework</a></li>
+        <li><a href="#foundations"><span class="rn-dot" style="background:var(--proj3)"></span>Research Foundations</a></li>
+        <li><a href="#lifecycle"><span class="rn-dot" style="background:var(--proj2)"></span>Benchmark Life Cycle</a></li>
+        <li><a href="#worlds"><span class="rn-dot" style="background:#2a7ae2"></span>Evolving Worlds</a></li>
       </ul>
     </aside>
 
@@ -257,154 +332,152 @@
     <main class="main-content" id="main">
 
       <!-- Vision -->
-      <section class="page-section" id="vision">
-        <h1 class="section-title">Research Vision</h1>
-        <div class="section-body">
-          <p>
-            A benchmark score is valuable only when success reflects the capability the benchmark was designed
-            to test. I call this problem <strong>evaluation integrity</strong>: whether success can be attributed to
-            the capability under test rather than to prior exposure, benchmark-specific optimization, or a proxy
-            that fails to capture the behavior that matters.
-          </p>
-          <p>
-            My research addresses evaluation integrity across the full life cycle of a benchmark. For private
-            benchmarks, I study how to evaluate black-box models without revealing the benchmark. For exposed
-            benchmarks, I study how to diagnose whether exposure has distorted performance and how to repair the
-            evaluation. Across both settings, I ask how integrity can be maintained as models and training data evolve.
-          </p>
-        </div>
-
-        <div class="vision-pillars" aria-label="Research focus areas">
-          <span class="pillar pillar-lme"><span class="dot"></span>Evaluation Integrity</span>
-          <span class="pillar pillar-se"><span class="dot"></span>Software Engineering</span>
-          <span class="pillar pillar-dc"><span class="dot"></span>Benchmark Contamination</span>
-          <span class="pillar pillar-rw"><span class="dot"></span>Observed Behavior</span>
+      <section class="research-hero" id="vision">
+        <div class="hero-kicker">Research Vision</div>
+        <h1>Evaluation Integrity for AI Systems</h1>
+        <p class="hero-thesis">
+          I develop evaluations whose results both <strong>measure the intended capability</strong> and remain
+          <strong>attributable to that capability</strong>—rather than to prior exposure, benchmark-specific
+          optimization, or a proxy that misses the behavior that matters.
+        </p>
+        <div class="hero-actions">
+          <a class="hero-action primary" href="docs/Research_Statement.pdf" target="_blank" rel="noopener noreferrer">Read Research Statement <span aria-hidden="true">↗</span></a>
+          <a class="hero-action" href="publications.html">View Publications <span aria-hidden="true">→</span></a>
         </div>
       </section>
 
-      <!-- Projects -->
-      <section class="page-section" id="projects">
-        <h2 class="section-title">Research Program</h2>
-        <div class="projects-list">
+      <!-- Integrity framework -->
+      <section class="page-section" id="framework">
+        <h2 class="section-title">An Integrity Framework</h2>
+        <p class="framework-intro">
+          A benchmark score becomes credible evidence of capability only when two complementary requirements hold.
+        </p>
+        <div class="framework-grid">
+          <article class="framework-card">
+            <div class="framework-label">Requirement 01</div>
+            <h3>Measurement Validity</h3>
+            <p class="framework-question">Does the evaluation capture the capability it is intended to measure?</p>
+            <ul class="framework-topics" aria-label="Measurement validity topics">
+              <li>Observed behavior</li>
+              <li>Execution grounding</li>
+              <li>Evolving worlds</li>
+            </ul>
+          </article>
+          <article class="framework-card attribution">
+            <div class="framework-label">Requirement 02</div>
+            <h3>Attribution Integrity</h3>
+            <p class="framework-question">Does success reflect capability rather than familiarity with or optimization for the evaluation?</p>
+            <ul class="framework-topics" aria-label="Attribution integrity topics">
+              <li>Private evaluation</li>
+              <li>Exposure diagnosis</li>
+              <li>Repair &amp; maintenance</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-          <!-- Project 1 -->
-          <div class="project-card p1" id="project1">
-            <div class="project-header">
-              <div class="project-num">1</div>
-              <div class="project-header-text">
-                <div class="project-title">Grounding Evaluation in Observed Behavior</div>
-                <span class="project-status status-active">Active</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <p class="project-desc">
-                My work on evaluation began with state reconciliation in Infrastructure as Code: correctness should be
-                established from the state a system actually produces, not from the plausibility of the artifact intended
-                to produce it. An empirical study of 5,110 defects led to an eight-category taxonomy and heuristics that
-                uncovered nine previously unknown Ansible compiler defects. I carried that principle into
-                <strong>ExITBench</strong>, an execution-based benchmark with 126 real-world IT-automation tasks and
-                733 test cases. Even after ten attempts, the strongest model succeeded on only 23.9% of tasks, with failures
-                concentrated in state-reconciliation reasoning and specialized automation knowledge.
-              </p>
-              <div class="project-papers-label">Papers</div>
-              <ul class="project-papers">
-                <li class="proj-paper-item">
-                  <span class="proj-paper-venue">ACL 2026 Findings</span>
-                  <span class="proj-paper-text">
-                    <a href="https://openreview.net/forum?id=48hzAd9xfq" target="_blank" rel="noopener noreferrer">
-                      Large Language Models for IT Automation Tasks: Are We There Yet?
-                    </a>
-                    — Md. Mahadi Hasan Sibat, John Salvador, Akond Ashfaque Ur Rahman, Santu Karmaker
-                  </span>
-                </li>
-                <li class="proj-paper-item">
-                  <span class="proj-paper-venue">FSE 2024</span>
-                  <span class="proj-paper-text">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                      State Reconciliation Defects in Infrastructure as Code
-                    </a>
-                    — Md. Mahadi Hasan Sibat, John Salvador, Santu Karmaker, Akond Ashfaque Ur Rahman
-                  </span>
-                </li>
-              </ul>
-            </div>
+      <!-- Foundations -->
+      <section class="page-section" id="foundations">
+        <h2 class="section-title">Research Foundations</h2>
+        <div class="section-body">
+          <p>My research developed through a progression from verifying software state to asking what AI evaluation results can legitimately establish.</p>
+        </div>
+        <div class="foundation-chain" aria-label="Research foundation progression">
+          <div class="foundation-step">
+            <div class="foundation-num">01 · SYSTEM STATE</div>
+            <h3>State Reconciliation</h3>
+            <p>Compare the state a system produces with the state it was intended to produce.</p>
           </div>
-
-          <!-- Project 2 -->
-          <div class="project-card p2" id="project2">
-            <div class="project-header">
-              <div class="project-num">2</div>
-              <div class="project-header-text">
-                <div class="project-title">Evaluation Without Exposure</div>
-                <span class="project-status status-active">Active</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <p class="project-desc">
-                When a benchmark remains private, evaluation itself can create the exposure that later undermines its
-                score. I developed the <strong>Private Evaluation Protocol (PEP)</strong>, which estimates performance
-                on a private benchmark from limited interaction with a black-box model while keeping the private remainder
-                hidden from the provider. On structured benchmarks, PEP estimated accuracy within 5.88 percentage points
-                on average. My ongoing work studies which public or protected interactions are most informative, how to
-                measure behavioral agreement for generation and tool-use tasks, and when evidence transfers across nearby
-                benchmarks.
-              </p>
-              <div class="project-papers-label">Papers</div>
-              <ul class="project-papers">
-                <li class="proj-paper-item">
-                  <span class="proj-paper-venue">AACL-IJCNLP 2026</span>
-                  <span class="proj-paper-text">
-                    Private Evaluation Protocol: Contamination-Resistant Black-Box Evaluation via Public-Slice Surrogates
-                    — Md. Mahadi Hasan Sibat, Sazzadur Rahaman, Yusuf Sarwar Uddin, Santu Karmaker
-                  </span>
-                </li>
-              </ul>
-            </div>
+          <div class="foundation-arrow" aria-hidden="true">→</div>
+          <div class="foundation-step">
+            <div class="foundation-num">02 · OBSERVED EFFECTS</div>
+            <h3>Execution-Grounded Evaluation</h3>
+            <p>Judge generated solutions by their effects in an environment, not by surface plausibility.</p>
           </div>
-
-          <!-- Project 3 -->
-          <div class="project-card p3" id="project3">
-            <div class="project-header">
-              <div class="project-num">3</div>
-              <div class="project-header-text">
-                <div class="project-title">Diagnosing, Repairing, and Maintaining Benchmarks</div>
-                <span class="project-status status-active">Active</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <p class="project-desc">
-                For an exposed benchmark, the question is not merely whether a model saw the evaluation, but whether
-                exposure changed its behavior enough to overstate capability. I study how exposure signatures differ
-                across tasks and modalities, how to distinguish familiarity from ordinary generalization, and how
-                meaning-preserving transformations can recover diagnostic value. Over repeated use, both private and
-                repaired benchmarks face an additional maintenance problem. I use state reconciliation to frame this
-                challenge: characterize a benchmark's current integrity state, compare it with the state required for
-                reliable evaluation, and intervene only when that gap becomes meaningful.
-              </p>
-              <div class="project-papers-label">Research Directions</div>
-              <ul class="project-papers">
-                <li class="proj-paper-item">
-                  <span class="proj-paper-venue">Diagnosis</span>
-                  <span class="proj-paper-text">
-                    Identify evidence of exposure-driven advantage across benchmarks and modalities.
-                  </span>
-                </li>
-                <li class="proj-paper-item">
-                  <span class="proj-paper-venue">Repair</span>
-                  <span class="proj-paper-text">
-                    Test whether meaning-preserving transformations remove exposure advantages without changing the capability under test.
-                  </span>
-                </li>
-                <li class="proj-paper-item">
-                  <span class="proj-paper-venue">Maintenance</span>
-                  <span class="proj-paper-text">
-                    Preserve evaluation integrity as models, training data, and sources of exposure change over time.
-                  </span>
-                </li>
-              </ul>
-            </div>
+          <div class="foundation-arrow" aria-hidden="true">→</div>
+          <div class="foundation-step">
+            <div class="foundation-num">03 · CAPABILITY CLAIMS</div>
+            <h3>Evaluation Integrity</h3>
+            <p>Determine what success measures and whether it can be attributed to the capability under test.</p>
           </div>
+        </div>
+        <div class="evidence-strip" aria-label="Evidence from prior work">
+          <span class="evidence-item"><strong>5,110</strong> IaC defects studied</span>
+          <span class="evidence-item"><strong>9</strong> previously unknown compiler defects</span>
+          <span class="evidence-item"><strong>126</strong> real-world ExITBench tasks</span>
+          <span class="evidence-item"><strong>733</strong> execution-based test cases</span>
+        </div>
+      </section>
 
+      <!-- Benchmark lifecycle -->
+      <section class="page-section" id="lifecycle">
+        <h2 class="section-title">Maintaining Integrity Across the Benchmark Life Cycle</h2>
+        <div class="section-body">
+          <p>I study how evaluation integrity can be preserved before exposure, recovered after exposure, and sustained as models and training data change.</p>
+        </div>
+        <div class="lifecycle" aria-label="Benchmark integrity lifecycle">
+          <article class="lifecycle-stage">
+            <div class="lifecycle-num">01</div>
+            <h3>Preserve</h3>
+            <p>Evaluate black-box models while keeping protected benchmark data private.</p>
+          </article>
+          <article class="lifecycle-stage">
+            <div class="lifecycle-num">02</div>
+            <h3>Diagnose</h3>
+            <p>Identify when exposure has changed behavior enough to overstate capability.</p>
+          </article>
+          <article class="lifecycle-stage">
+            <div class="lifecycle-num">03</div>
+            <h3>Repair</h3>
+            <p>Remove exposure-driven advantages while preserving the capability being tested.</p>
+          </article>
+          <article class="lifecycle-stage">
+            <div class="lifecycle-num">04</div>
+            <h3>Maintain</h3>
+            <p>Adapt evaluations as models evolve and diagnostic value erodes over repeated use.</p>
+          </article>
+        </div>
+        <div class="program-detail">
+          <article class="program-item">
+            <h3>Evaluation Without Exposure</h3>
+            <p>The Private Evaluation Protocol estimates performance from limited black-box interaction while keeping the private remainder hidden. My current work studies informative interactions, behavioral agreement, and transfer across nearby benchmarks.</p>
+          </article>
+          <article class="program-item">
+            <h3>Diagnosing and Repairing Exposure</h3>
+            <p>I study modality-specific signatures of exposure, how to distinguish familiarity from generalization, and whether meaning-preserving transformations can recover diagnostic value.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Frontier -->
+      <section class="page-section frontier" id="worlds">
+        <div class="frontier-header">
+          <div>
+            <div class="frontier-kicker">Research Frontier</div>
+            <h2>Evaluating AI in Evolving Worlds</h2>
+            <p class="frontier-summary">
+              Beyond preserving fixed benchmarks, I envision evaluation as a generative task: constructing controlled worlds with actors, objectives, constraints, and changing conditions that reveal how models reason, interact, decide, and adapt over time.
+            </p>
+          </div>
+          <div class="world-model" aria-label="Evolving world evaluation process">
+            <div class="world-model-row"><span class="world-model-box">Capability</span><span>→</span><span class="world-model-box">Required mechanisms</span></div>
+            <div class="world-model-row"><span class="world-model-box">Generated world</span><span>→</span><span class="world-model-box">Model interaction</span></div>
+            <div class="world-model-row"><span class="world-model-box">Observed behavior</span><span>→</span><span class="world-model-box">Capability evidence</span></div>
+          </div>
+        </div>
+        <div class="frontier-questions">
+          <div class="frontier-question">
+            <span>MECHANISMS</span>
+            <p>Which mechanisms of real-world situations must an evaluation preserve?</p>
+          </div>
+          <div class="frontier-question">
+            <span>SUFFICIENCY</span>
+            <p>What is the smallest generated world sufficient to measure a capability?</p>
+          </div>
+          <div class="frontier-question">
+            <span>TRANSFER</span>
+            <p>Does success in the generated world provide reliable evidence beyond the simulation?</p>
+          </div>
         </div>
       </section>
 
@@ -434,7 +507,7 @@
 
     // Sidebar quick-jump active state on scroll
     const rnLinks = document.querySelectorAll('.research-nav a');
-    const anchors = ['vision','project1','project2','project3'].map(id => document.getElementById(id));
+    const anchors = ['vision','framework','foundations','lifecycle','worlds'].map(id => document.getElementById(id));
     const onScroll = () => {
       let current = anchors[0];
       anchors.forEach(el => { if (el && window.scrollY + 100 >= el.offsetTop) current = el; });
