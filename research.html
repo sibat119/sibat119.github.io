@@ -130,6 +130,24 @@
     .program-item h3 { font-size:13px; margin-bottom:4px; }
     .program-item p { font-size:12.5px; line-height:1.6; color:var(--text-muted); }
 
+    /* ── Research directions overview ── */
+    .directions-intro { color:var(--text-muted); max-width:70ch; margin-bottom:18px; }
+    .directions-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .direction-card { border:1px solid var(--border); border-radius:8px; padding:22px; display:flex; flex-direction:column; min-height:280px; background:#fff; }
+    .direction-card.lifecycle-direction { border-top:3px solid var(--proj2); }
+    .direction-card.worlds-direction { border-top:3px solid var(--proj1); }
+    .direction-label { font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--text-light); margin-bottom:7px; }
+    .direction-card h3 { font-size:18px; line-height:1.35; margin-bottom:9px; }
+    .direction-card > p { font-size:13.5px; line-height:1.65; color:var(--text-muted); margin-bottom:17px; }
+    .direction-visual { margin:auto 0 18px; }
+    .mini-lifecycle { display:grid; grid-template-columns:repeat(4,1fr); align-items:center; gap:5px; }
+    .mini-stage { position:relative; padding:8px 3px; border-radius:4px; background:var(--proj2-bg); color:var(--proj2); text-align:center; font-size:10.5px; font-weight:600; }
+    .mini-stage:not(:last-child)::after { content:'→'; position:absolute; right:-8px; z-index:2; color:var(--text-light); }
+    .mini-loop { display:grid; grid-template-columns:1fr 18px 1fr; align-items:center; gap:5px; }
+    .mini-loop-box { padding:7px 4px; border:1px solid #cbd9e8; background:#f7faff; border-radius:4px; text-align:center; font-size:10.5px; color:var(--text-muted); }
+    .mini-loop-arrow { color:var(--text-light); text-align:center; }
+    .direction-link { display:inline-flex; align-items:center; gap:6px; width:max-content; font-size:12.5px; font-weight:600; }
+
     /* ── Evolving worlds frontier ── */
     .frontier { border:1px solid #cdddee; border-radius:8px; overflow:hidden; background:linear-gradient(135deg,#f7faff 0%,#fff 68%); }
     .frontier-header { display:grid; grid-template-columns:1.25fr .75fr; gap:28px; padding:24px; border-bottom:1px solid #dbe6f2; }
@@ -236,7 +254,7 @@
       .author-avatar { width:90px; height:90px; font-size:2rem; }
       .main-content { padding:24px 20px 40px; }
       .research-hero h1 { font-size:25px; }
-      .framework-grid, .program-detail, .frontier-header { grid-template-columns:1fr; }
+      .framework-grid, .program-detail, .frontier-header, .directions-grid { grid-template-columns:1fr; }
       .foundation-chain { grid-template-columns:1fr; }
       .foundation-arrow { transform:rotate(90deg); height:14px; }
       .lifecycle { grid-template-columns:1fr; gap:8px; }
@@ -323,8 +341,7 @@
         <li><a href="#vision" class="rn-active"><span class="rn-dot" style="background:#555"></span>Research Vision</a></li>
         <li><a href="#framework"><span class="rn-dot" style="background:var(--proj1)"></span>Integrity Framework</a></li>
         <li><a href="#foundations"><span class="rn-dot" style="background:var(--proj3)"></span>Research Foundations</a></li>
-        <li><a href="#lifecycle"><span class="rn-dot" style="background:var(--proj2)"></span>Benchmark Life Cycle</a></li>
-        <li><a href="#worlds"><span class="rn-dot" style="background:#2a7ae2"></span>Evolving Worlds</a></li>
+        <li><a href="#directions"><span class="rn-dot" style="background:var(--proj2)"></span>Research Directions</a></li>
       </ul>
     </aside>
 
@@ -409,75 +426,30 @@
         </div>
       </section>
 
-      <!-- Benchmark lifecycle -->
-      <section class="page-section" id="lifecycle">
-        <h2 class="section-title">Maintaining Integrity Across the Benchmark Life Cycle</h2>
-        <div class="section-body">
-          <p>I study how evaluation integrity can be preserved before exposure, recovered after exposure, and sustained as models and training data change.</p>
-        </div>
-        <div class="lifecycle" aria-label="Benchmark integrity lifecycle">
-          <article class="lifecycle-stage">
-            <div class="lifecycle-num">01</div>
-            <h3>Preserve</h3>
-            <p>Evaluate black-box models while keeping protected benchmark data private.</p>
+      <!-- Research directions -->
+      <section class="page-section" id="directions">
+        <h2 class="section-title">Two Research Directions</h2>
+        <p class="directions-intro">I pursue evaluation integrity along two complementary dimensions: preserving what benchmark success can be attributed to, and expanding what AI evaluations can meaningfully measure.</p>
+        <div class="directions-grid">
+          <article class="direction-card lifecycle-direction">
+            <div class="direction-label">Attribution Integrity</div>
+            <h3>Benchmark Integrity Across the Life Cycle</h3>
+            <p>How can evaluations remain informative before and after exposure? I study private evaluation, exposure diagnosis, benchmark repair, and long-term maintenance.</p>
+            <div class="direction-visual mini-lifecycle" aria-label="Preserve, diagnose, repair, and maintain">
+              <span class="mini-stage">Preserve</span><span class="mini-stage">Diagnose</span><span class="mini-stage">Repair</span><span class="mini-stage">Maintain</span>
+            </div>
+            <a class="direction-link" href="benchmark-integrity.html">Explore this research direction <span aria-hidden="true">→</span></a>
           </article>
-          <article class="lifecycle-stage">
-            <div class="lifecycle-num">02</div>
-            <h3>Diagnose</h3>
-            <p>Identify when exposure has changed behavior enough to overstate capability.</p>
+          <article class="direction-card worlds-direction">
+            <div class="direction-label">Measurement Validity</div>
+            <h3>Evaluating AI in Evolving Worlds</h3>
+            <p>How can we evaluate sustained competence rather than isolated task completion? I study controlled worlds that reveal how models reason, adapt, and manage consequences over time.</p>
+            <div class="direction-visual mini-loop" aria-label="Observe, decide, experience consequences, and adapt">
+              <span class="mini-loop-box">Observe &amp; decide</span><span class="mini-loop-arrow">→</span><span class="mini-loop-box">Consequences</span>
+              <span class="mini-loop-box">New information</span><span class="mini-loop-arrow">←</span><span class="mini-loop-box">World changes</span>
+            </div>
+            <a class="direction-link" href="evolving-worlds.html">Explore this research direction <span aria-hidden="true">→</span></a>
           </article>
-          <article class="lifecycle-stage">
-            <div class="lifecycle-num">03</div>
-            <h3>Repair</h3>
-            <p>Remove exposure-driven advantages while preserving the capability being tested.</p>
-          </article>
-          <article class="lifecycle-stage">
-            <div class="lifecycle-num">04</div>
-            <h3>Maintain</h3>
-            <p>Adapt evaluations as models evolve and diagnostic value erodes over repeated use.</p>
-          </article>
-        </div>
-        <div class="program-detail">
-          <article class="program-item">
-            <h3>Evaluation Without Exposure</h3>
-            <p>The Private Evaluation Protocol estimates performance from limited black-box interaction while keeping the private remainder hidden. My current work studies informative interactions, behavioral agreement, and transfer across nearby benchmarks.</p>
-          </article>
-          <article class="program-item">
-            <h3>Diagnosing and Repairing Exposure</h3>
-            <p>I study modality-specific signatures of exposure, how to distinguish familiarity from generalization, and whether meaning-preserving transformations can recover diagnostic value.</p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Frontier -->
-      <section class="page-section frontier" id="worlds">
-        <div class="frontier-header">
-          <div>
-            <div class="frontier-kicker">Research Frontier</div>
-            <h2>Evaluating AI in Evolving Worlds</h2>
-            <p class="frontier-summary">
-              Beyond preserving fixed benchmarks, I envision evaluation as a generative task: constructing controlled worlds with actors, objectives, constraints, and changing conditions that reveal how models reason, interact, decide, and adapt over time.
-            </p>
-          </div>
-          <div class="world-model" aria-label="Evolving world evaluation process">
-            <div class="world-model-row"><span class="world-model-box">Capability</span><span>→</span><span class="world-model-box">Required mechanisms</span></div>
-            <div class="world-model-row"><span class="world-model-box">Generated world</span><span>→</span><span class="world-model-box">Model interaction</span></div>
-            <div class="world-model-row"><span class="world-model-box">Observed behavior</span><span>→</span><span class="world-model-box">Capability evidence</span></div>
-          </div>
-        </div>
-        <div class="frontier-questions">
-          <div class="frontier-question">
-            <span>MECHANISMS</span>
-            <p>Which mechanisms of real-world situations must an evaluation preserve?</p>
-          </div>
-          <div class="frontier-question">
-            <span>SUFFICIENCY</span>
-            <p>What is the smallest generated world sufficient to measure a capability?</p>
-          </div>
-          <div class="frontier-question">
-            <span>TRANSFER</span>
-            <p>Does success in the generated world provide reliable evidence beyond the simulation?</p>
-          </div>
         </div>
       </section>
 
@@ -488,7 +460,7 @@
   <footer style="border-top:1px solid var(--border);background:var(--white);padding:14px 40px;font-size:12px;color:var(--text-light);">
     <div class="footer-inner">
       <span>© 2026 Md. Mahadi Hasan Sibat &nbsp;·&nbsp; University of Central Florida</span>
-      <span>Last updated: October 2026</span>
+      <span>Last updated: November 2026</span>
     </div>
   </footer>
 
@@ -507,7 +479,7 @@
 
     // Sidebar quick-jump active state on scroll
     const rnLinks = document.querySelectorAll('.research-nav a');
-    const anchors = ['vision','framework','foundations','lifecycle','worlds'].map(id => document.getElementById(id));
+    const anchors = ['vision','framework','foundations','directions'].map(id => document.getElementById(id));
     const onScroll = () => {
       let current = anchors[0];
       anchors.forEach(el => { if (el && window.scrollY + 100 >= el.offsetTop) current = el; });

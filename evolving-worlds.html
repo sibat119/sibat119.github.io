@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evolving Worlds — Md. Mahadi Hasan Sibat</title>
+  <meta name="description" content="A research direction for evaluating sustained AI competence in controlled, evolving environments." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="research-detail.css" />
+</head>
+<body>
+  <header class="masthead"><div class="masthead-inner">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="masthead-nav" id="mastheadNav"><li><a href="index.html">Home</a></li><li><a href="research.html" class="active">Research</a></li><li><a href="publications.html">Publications</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="experience.html">Experience</a></li><li><a href="blog.html">Blog</a></li></ul>
+  </div></header>
+  <div class="page">
+    <aside class="sidebar">
+      <a class="back-link" href="research.html"><span aria-hidden="true">←</span> Research overview</a>
+      <div class="author-avatar"><img src="images/IMG_0571.jpeg" alt="Md. Mahadi Hasan Sibat" /></div>
+      <div class="author-name">Md. Mahadi Hasan Sibat</div><div class="author-role">PhD Candidate · University of Central Florida</div>
+      <hr class="side-rule" /><div class="side-label">On this page</div>
+      <ul class="side-nav"><li><a href="#motivation">Why evolving worlds?</a></li><li><a href="#method">Methodology</a></li><li><a href="#examples">Motivating worlds</a></li><li><a href="#questions">Research questions</a></li></ul>
+    </aside>
+    <main>
+      <div class="breadcrumb"><a href="research.html">Research</a><span>/</span>Evolving Worlds</div>
+      <section class="hero"><div class="kicker">Measurement Validity</div><h1>Evaluating AI in Evolving Worlds</h1><p class="lede">I study how controlled, evolving environments can reveal whether AI systems reason, adapt, and manage consequences across unfamiliar situations—rather than merely complete isolated tasks.</p></section>
+
+      <section class="section" id="motivation"><h2 class="section-title">From Isolated Success to Sustained Competence</h2><p class="section-intro">A correct answer to a predefined task provides limited evidence about how an agent will behave as information, objectives, other actors, and operating conditions change.</p>
+        <div class="comparison" aria-label="Comparison of fixed-task and evolving-world evaluation">
+          <div class="comparison-panel"><div class="comparison-label">FIXED-TASK EVALUATION</div><h3>One task, one response, one score</h3><div class="comparison-flow"><span class="flow-box">Static context</span><span>→</span><span class="flow-box">Response</span><span>→</span><span class="flow-box">Score</span></div></div>
+          <div class="comparison-arrow" aria-hidden="true">→</div>
+          <div class="comparison-panel active"><div class="comparison-label">EVOLVING-WORLD EVALUATION</div><h3>Decisions unfold through interaction</h3><div class="comparison-flow"><span class="flow-box">Observe</span><span>→</span><span class="flow-box">Decide</span><span>→</span><span class="flow-box">Consequence</span></div><div class="loop">↺ The world changes and produces new information</div></div>
+        </div>
+      </section>
+
+      <section class="section" id="method"><h2 class="section-title">A General Evaluation Method</h2><p class="section-intro">The goal is not simply to generate more scenarios. It is to construct worlds whose controlled mechanisms make behavioral evidence interpretable.</p>
+        <div class="method" aria-label="Method for evolving-world evaluation">
+          <article class="method-step"><div class="method-num">01</div><h3>Capability claim</h3><p>Define the competence the evaluation should establish.</p></article>
+          <article class="method-step"><div class="method-num">02</div><h3>Required mechanisms</h3><p>Identify the interactions and dynamics needed to reveal it.</p></article>
+          <article class="method-step"><div class="method-num">03</div><h3>Controlled world</h3><p>Configure actors, information, goals, and constraints.</p></article>
+          <article class="method-step"><div class="method-num">04</div><h3>Behavioral trajectory</h3><p>Observe decisions, updates, consequences, and recovery.</p></article>
+          <article class="method-step"><div class="method-num">05</div><h3>Capability evidence</h3><p>Test counterfactuals and transfer across held-out worlds.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="examples"><h2 class="section-title">Three Motivating Worlds</h2><p class="section-intro">The domains differ, but each uses controlled variation to distinguish genuine adaptation from success based on familiar associations.</p>
+        <div class="worlds">
+          <article class="world"><div class="world-head"><div class="world-icon">SOCIAL REASONING</div><h3>Simulated Courtroom</h3></div><div class="world-body"><p>An agent evaluates evidence while characters exchange incomplete or unreliable information.</p><p><strong>Vary</strong>Beliefs, demographics, relationships, testimony, and information access.</p><p><strong>Measure</strong>Evidence use, belief updating, bias, and counterfactual consistency.</p></div></article>
+          <article class="world"><div class="world-head"><div class="world-icon">FINANCIAL REASONING</div><h3>Simulated Economy</h3></div><div class="world-body"><p>An agent forecasts and makes decisions in markets whose familiar relationships may no longer hold.</p><p><strong>Vary</strong>Company identities, fundamentals, investor behavior, and news quality.</p><p><strong>Measure</strong>Forecasting, calibration, uncertainty, and adaptation.</p></div></article>
+          <article class="world"><div class="world-head"><div class="world-icon">ADAPTIVE AUTOMATION</div><h3>Simulated Infrastructure</h3></div><div class="world-body"><p>An agent maintains a system while workloads, requirements, failures, and threats evolve.</p><p><strong>Vary</strong>Users, services, resources, failures, workloads, and security conditions.</p><p><strong>Measure</strong>Reliability, intervention quality, recovery, efficiency, and restraint.</p></div></article>
+        </div>
+      </section>
+
+      <section class="section" id="questions"><h2 class="section-title">Open Research Questions</h2><div class="questions">
+        <article class="question"><h3>Mechanism fidelity</h3><p>Which mechanisms of real-world situations must a generated environment preserve?</p></article>
+        <article class="question"><h3>World sufficiency</h3><p>What is the smallest world sufficient to measure the intended capability?</p></article>
+        <article class="question"><h3>Causal diagnosis</h3><p>Which controlled changes explain success, failure, bias, or adaptation?</p></article>
+        <article class="question"><h3>Evidence transfer</h3><p>When does success in a generated world support claims beyond the simulation?</p></article>
+      </div></section>
+    </main>
+  </div>
+  <footer class="footer"><div class="footer-inner"><span>© 2026 Md. Mahadi Hasan Sibat · University of Central Florida</span><span><a href="research.html">Research overview</a></span></div></footer>
+  <script>const t=document.getElementById('navToggle'),n=document.getElementById('mastheadNav');t.addEventListener('click',()=>{const o=n.classList.toggle('open');t.setAttribute('aria-expanded',o)});</script>
+</body></html>
