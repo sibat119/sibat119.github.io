@@ -11,7 +11,7 @@
 <body>
   <header class="masthead"><div class="masthead-inner"><button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button><ul class="masthead-nav" id="mastheadNav"><li><a href="index.html">Home</a></li><li><a href="research.html" class="active">Research</a></li><li><a href="publications.html">Publications</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="experience.html">Experience</a></li><li><a href="blog.html">Blog</a></li></ul></div></header>
   <div class="page">
-    <aside class="sidebar"><a class="back-link" href="research.html"><span aria-hidden="true">←</span> Research overview</a><div class="author-avatar"><img src="images/IMG_0571.jpeg" alt="Md. Mahadi Hasan Sibat" /></div><div class="author-name">Md. Mahadi Hasan Sibat</div><div class="author-role">PhD Candidate · University of Central Florida</div><hr class="side-rule" /><div class="side-label">On this page</div><ul class="side-nav"><li><a href="#problem">Why integrity degrades</a></li><li><a href="#lifecycle">The life cycle</a></li><li><a href="#program">Research program</a></li><li><a href="#questions">Research questions</a></li></ul></aside>
+    <aside class="sidebar"><a class="back-link" href="research.html"><span aria-hidden="true">←</span> Research overview</a><div class="author-avatar"><img src="images/IMG_0571.jpeg" alt="Md. Mahadi Hasan Sibat" /></div><div class="author-name">Md. Mahadi Hasan Sibat</div><div class="author-role">PhD Candidate · University of Central Florida</div><hr class="side-rule" /><div class="side-label">On this page</div><ul class="side-nav"><li><a href="#problem">Why integrity degrades</a></li><li><a href="#lifecycle">The life cycle</a></li><li><a href="#agenda">Research agenda</a></li><li><a href="#publications">Related publications</a></li></ul></aside>
     <main>
       <div class="breadcrumb"><a href="research.html">Research</a><span>/</span>Benchmark Integrity</div>
       <section class="hero"><div class="kicker">Attribution Integrity</div><h1>Maintaining Integrity Across the Benchmark Life Cycle</h1><p class="lede">I study how evaluation results can remain attributable to capability before exposure, recover diagnostic value after exposure, and stay informative as models and training data change.</p></section>
@@ -20,26 +20,23 @@
 
       <section class="section" id="lifecycle"><h2 class="section-title">The Benchmark Integrity Life Cycle</h2><p class="section-intro">The four stages address different points at which exposure and repeated use can weaken the interpretation of a score.</p>
         <div class="lifecycle" aria-label="Preserve, diagnose, repair, and maintain benchmark integrity">
-          <article class="stage"><div class="stage-num">01</div><h3>Preserve</h3><p>Evaluate black-box models while keeping protected benchmark data private.</p></article>
+          <article class="stage"><div class="stage-num">01</div><h3>Preserve</h3><p>Evaluate black-box models while keeping protected benchmark data private <a class="cite" href="#pep">[1]</a>.</p></article>
           <article class="stage"><div class="stage-num">02</div><h3>Diagnose</h3><p>Identify when exposure has changed behavior enough to overstate capability.</p></article>
           <article class="stage"><div class="stage-num">03</div><h3>Repair</h3><p>Remove exposure-driven advantages while preserving the capability under test.</p></article>
           <article class="stage"><div class="stage-num">04</div><h3>Maintain</h3><p>Adapt evaluations as models evolve and diagnostic value erodes through use.</p></article>
         </div>
       </section>
 
-      <section class="section" id="program"><h2 class="section-title">Research Program</h2><div class="workstreams">
-        <article class="workstream"><h3>Evaluation Without Exposure</h3><p>The Private Evaluation Protocol estimates performance from limited black-box interaction while keeping the private remainder hidden. Current work studies informative interactions, behavioral agreement, and transfer across nearby benchmarks.</p></article>
-        <article class="workstream"><h3>Diagnosing Exposure</h3><p>I study modality-specific behavioral signatures of exposure and methods for distinguishing benchmark familiarity from genuine generalization.</p></article>
-        <article class="workstream"><h3>Repairing Compromised Evaluations</h3><p>I investigate whether meaning-preserving transformations can remove exposure-driven advantages without changing the capability being evaluated.</p></article>
-        <article class="workstream"><h3>Continuous Maintenance</h3><p>I study how evaluation suites can be refreshed and monitored as models, training corpora, and benchmark-specific optimization practices evolve.</p></article>
+      <section class="section" id="agenda"><h2 class="section-title">Research Agenda</h2><p class="section-intro">Each part of the life cycle pairs a concrete research approach with the question needed to move it forward.</p><div class="workstreams">
+        <article class="workstream"><h3>Evaluation Without Exposure</h3><p>The Private Evaluation Protocol estimates performance from limited black-box interaction while keeping the private remainder hidden <a class="cite" href="#pep">[1]</a>. Current work studies informative interactions, behavioral agreement, and transfer across nearby benchmarks.</p><p class="agenda-question"><strong>Open question</strong>How much performance can be inferred from limited interaction without revealing protected items?</p></article>
+        <article class="workstream"><h3>Diagnosing Exposure</h3><p>I study modality-specific behavioral signatures of exposure and methods for distinguishing benchmark familiarity from genuine generalization.</p><p class="agenda-question"><strong>Open question</strong>Which behavioral changes reliably distinguish familiarity from capability?</p></article>
+        <article class="workstream"><h3>Repairing Compromised Evaluations</h3><p>I investigate whether meaning-preserving transformations can remove exposure-driven advantages without changing the capability being evaluated.</p><p class="agenda-question"><strong>Open question</strong>Can an exposed evaluation be transformed without changing what it measures?</p></article>
+        <article class="workstream"><h3>Continuous Maintenance</h3><p>I study how evaluation suites can be refreshed and monitored as models, training corpora, and benchmark-specific optimization practices evolve.</p><p class="agenda-question"><strong>Open question</strong>When should an evaluation be protected, repaired, refreshed, or retired?</p></article>
       </div></section>
 
-      <section class="section" id="questions"><h2 class="section-title">Open Research Questions</h2><div class="questions">
-        <article class="question" style="border-left-color:var(--purple)"><h3>Private inference</h3><p>How much performance can be inferred from limited interaction without revealing protected items?</p></article>
-        <article class="question" style="border-left-color:var(--purple)"><h3>Exposure signatures</h3><p>Which behavioral changes reliably distinguish familiarity from capability?</p></article>
-        <article class="question" style="border-left-color:var(--purple)"><h3>Capability-preserving repair</h3><p>Can an exposed evaluation be transformed without changing what it measures?</p></article>
-        <article class="question" style="border-left-color:var(--purple)"><h3>Maintenance policy</h3><p>When should an evaluation be protected, repaired, refreshed, or retired?</p></article>
-      </div></section>
+      <section class="section" id="publications"><h2 class="section-title">Related Publications</h2><ul class="related-publications">
+        <li class="related-publication" id="pep"><div class="publication-meta">AACL-IJCNLP 2026</div><div><div class="publication-title">Private Evaluation Protocol: Contamination-Resistant Black-Box Evaluation via Public-Slice Surrogates</div><div class="publication-authors"><strong>Md. Mahadi Hasan</strong>, Sazzadur Rahaman, Yusuf Sarwar Uddin, and Santu Karmaker</div></div></li>
+      </ul><a class="all-publications" href="publications.html">View all publications <span aria-hidden="true">→</span></a></section>
     </main>
   </div>
   <footer class="footer"><div class="footer-inner"><span>© 2026 Md. Mahadi Hasan Sibat · University of Central Florida</span><span><a href="research.html">Research overview</a></span></div></footer>
